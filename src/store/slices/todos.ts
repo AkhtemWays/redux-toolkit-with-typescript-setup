@@ -4,11 +4,13 @@ interface todosState {
   todos: string[];
 }
 
+const initialState: todosState = {
+  todos: ["помыть полы", "найти работу", "если не найду идти в пятёрочку"],
+};
+
 const todosSlice = createSlice({
   name: "todos",
-  initialState: {
-    todos: ["помыть полы", "найти работу", "если не найду идти в пятёрочку"],
-  },
+  initialState,
   reducers: {
     addTodo: (state: todosState, action: PayloadAction<string>) => {
       state.todos.push(action.payload);
